@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: precious-quail-nodejs-gitops
+  description: This is GitOps manifest for precious-quail-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: precious-quail-nodejs
+    janus-idp.io/tekton: precious-quail-nodejs 
+    backstage.io/kubernetes-id: precious-quail-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:precious-quail-nodejs
